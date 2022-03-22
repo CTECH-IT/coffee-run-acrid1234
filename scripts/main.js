@@ -9,6 +9,7 @@
     let DataStore = App.DataStore;
     let FormHandler = App.Formhandler;
     let CheckList = App.CheckList;
+    let Validation = App.Validation;
 
     let myTruck = new Truck('12345', new DataStore());
     window.myTruck = myTruck;
@@ -23,5 +24,7 @@
     })
 
     checkList.addClickHandler(myTruck.deliverOrder.bind(myTruck));
+    
+    formHandler.addInputHandler(Validation.isCompanyEmail);
 
 })(window);
