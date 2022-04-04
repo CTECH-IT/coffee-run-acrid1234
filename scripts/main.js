@@ -9,7 +9,7 @@
     let Truck = App.Truck;
     let DataStore = App.DataStore;
     let RemoteDataStore = App.RemoteDataStore;
-    let FormHandler = App.Formhandler;
+    let FormHandler = App.FormHandler;
     let CheckList = App.CheckList;
     let Validation = App.Validation;
 
@@ -22,10 +22,15 @@
 
     let formHandler = new FormHandler(FORM_SELECTOR);
 
-    formHandler.addSubmitHandler(function (data) {
+    /*formHandler.addSubmitHandler(function (data) {
         myTruck.createOrder.call(myTruck, data);
         checkList.addRow.call(checkList, data);
-    })
+    })*/
+
+    formHandler.addSubmitHandler(myTruck.createOrder.bind(myTruck));
+
+
+    console.log(formHandler);
 
     checkList.addClickHandler(myTruck.deliverOrder.bind(myTruck));
     

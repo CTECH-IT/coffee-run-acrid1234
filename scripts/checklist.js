@@ -2,7 +2,7 @@
     'use strict';
     let App = window.App || {};
     let $ = window.jQuery;
-    function Checklist(selector) {
+    function CheckList(selector) {
         if (!selector) {
             throw new Error('No selector provided');
         }
